@@ -10,8 +10,8 @@ public class Basket {
 
 	private List<Product> products = new ArrayList<>();
 
-	public void addProduct(Product product, int i) {
-		product.setQuantity(i);
+	public void addProduct(Product product, int quantity) {
+		product.setQuantity(quantity);
 		products.add(product);
 	}
 	public void addProductWithWeight(Product product, BigDecimal weight, String unit) {

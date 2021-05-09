@@ -16,15 +16,15 @@ public class Product {
     private BigDecimal weight;
     private String unit;
 
-    public Product(BigDecimal price, int id) {
+    public Product(BigDecimal price, int codeBarProdcut) {
         this.price = price;
-        this.codeBarProdcut = id;
+        this.codeBarProdcut = codeBarProdcut;
     }
 
-    public Product(BigDecimal price, String unit, int id) {
+    public Product(BigDecimal price, String unit, int codeBarProdcut) {
         this.price = price;
         this.unit = unit;
-        this.codeBarProdcut = id;
+        this.codeBarProdcut = codeBarProdcut;
     }
 
 
