@@ -1,5 +1,4 @@
-Supermarket Pricing<br>
- 
+Supermarket Pricing :<br>
 The problem domain is something seemingly simple: pricing goods at<br>
 supermarkets.
 <br>
