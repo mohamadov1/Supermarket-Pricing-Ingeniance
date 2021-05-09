@@ -95,28 +95,4 @@ public class PromotionTest {
 
 	}
 	
-	
-	@Test
-	public void testCommandeAvecUnProduitKiloAuPanier() {
-		Checkout checkout = new Checkout();
-		Basket basket = new Basket();
-		basket.addProductWithWeight(apple,new BigDecimal("1.50"), Weight.KILOGRAMME.getValue());
-		BigDecimal total = checkout.calculateTheBasketTotal(basket,null);
-		org.junit.Assert.assertEquals(new BigDecimal("4.50"), total.setScale(2));
-	}
-	
-	
-	
-	@Test
-	public void testCommandeAvecUnProduitKiloPlusProduitSimpleAuPanier() {
-		Checkout checkout = new Checkout();
-		Basket basket = new Basket();
-		basket.addProduct(pizza,10);
-		basket.addProduct(yogurt,10);
-		basket.addProduct(coca,1);
-		basket.addProductWithWeight(apple,new BigDecimal("1.50"), Weight.KILOGRAMME.getValue());
-		BigDecimal total = checkout.calculateTheBasketTotal(basket,null);
-		org.junit.Assert.assertEquals(new BigDecimal("32.00"), total.setScale(2));
-	}
-	
 }
