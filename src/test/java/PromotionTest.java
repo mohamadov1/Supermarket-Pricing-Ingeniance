@@ -4,8 +4,6 @@ import model.promotion.BuyXforYpricePromotion;
 import model.promotion.FreeProductPromotion;
 import org.junit.Before;
 import org.junit.Test;
-import utils.Weight;
-
 import java.math.BigDecimal;
 
 
@@ -14,14 +12,12 @@ public class PromotionTest {
 	private Product pizza;
 	private Product yogurt;
 	private Product coca;
-	private Product apple;
-	
+
 	@Before
 	public void init() {
 		pizza  = new Product(new BigDecimal("1.5"),1);
 		yogurt = new Product(new BigDecimal("1.0"),2);
 		coca   = new Product(new BigDecimal("2.5"),3);
-		apple  = new Product(new BigDecimal("3.0"), Weight.KILOGRAMME.getValue(),4);
 	  }
 
 	
@@ -94,5 +90,4 @@ public class PromotionTest {
 		org.junit.Assert.assertEquals(new BigDecimal("21.50"), total.setScale(2));
 
 	}
-	
 }

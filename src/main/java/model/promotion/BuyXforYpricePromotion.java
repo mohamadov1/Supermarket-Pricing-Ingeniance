@@ -1,23 +1,15 @@
 package model.promotion;
 
+import lombok.Getter;
 import model.Product;
 
 import java.math.BigDecimal;
 
+@Getter
 public class BuyXforYpricePromotion extends Promotion {
 
 	private BigDecimal price;
-	
 	private int numberOfProduct;
-
-	public BigDecimal getPrice() {
-		return price;
-	}
-
-
-	public int getNumberOfProduct() {
-		return numberOfProduct;
-	}
 
 	public BuyXforYpricePromotion(Product product, BigDecimal price, int numberOfProduct) {
 		super(product);

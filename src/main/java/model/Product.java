@@ -1,8 +1,13 @@
 package model;
 
+import lombok.*;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@Setter
+@Getter
+@NoArgsConstructor
 public class Product {
 
     private int codeBarProdcut;
@@ -10,9 +15,6 @@ public class Product {
     private int quantity;
     private BigDecimal weight;
     private String unit;
-
-    public Product() {
-    }
 
     public Product(BigDecimal price, int id) {
         this.price = price;
@@ -25,45 +27,6 @@ public class Product {
         this.codeBarProdcut = id;
     }
 
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public int getCodeBarProdcut() {
-        return codeBarProdcut;
-    }
-
-    public void setCodeBarProdcut(int codeBarProdcut) {
-        this.codeBarProdcut = codeBarProdcut;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getWeight() {
-        return weight;
-    }
-
-    public void setWeight(BigDecimal weight) {
-        this.weight = weight;
-    }
 
     @Override
     public boolean equals(Object o) {
