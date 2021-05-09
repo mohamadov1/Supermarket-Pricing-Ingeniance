@@ -48,8 +48,8 @@ public final class PromotionCalculate {
                         } else if (promotion instanceof BuyXforYpricePromotion) {
                             BuyXforYpricePromotion buyXforYpricePromotion = (BuyXforYpricePromotion) promotion;
                             if (buyXforYpricePromotion.getProduct().getCodeBarProdcut() == product.getCodeBarProdcut()) {
-                                BigDecimal montantAdeduire2 = PromotionCalculate.applyPromotionXProductForYPrice(product, buyXforYpricePromotion);
-                                totalDiscountAmount.set(totalDiscountAmount.get().add(montantAdeduire2));
+                                BigDecimal discount = PromotionCalculate.applyPromotionXProductForYPrice(product, buyXforYpricePromotion);
+                                totalDiscountAmount.set(totalDiscountAmount.get().add(discount));
                             }
                         }
                     }
