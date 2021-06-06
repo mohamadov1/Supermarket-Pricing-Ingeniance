@@ -32,7 +32,7 @@ public final class PromotionCalculate {
     /**
      *
      * @param product Product on which the promotion can be applied
-     * @param buyXforYpricePromotion
+     * @param buyXforYpricePromotion Eligible product
      * @return Amount to reduce
      * Example : Champion price = 15 euros => Buy 2 champions for 25 euros
      */
@@ -50,7 +50,7 @@ public final class PromotionCalculate {
     /**
      *
      * @param promotions The list of promotions that can be applied to the product
-     * @param product
+     * @param product Eligible product
      * @return total Discount Amount
      */
     public static BigDecimal applyMultiplePromotions(List<Promotion> promotions, Product product) {
@@ -78,11 +78,16 @@ public final class PromotionCalculate {
         return totalDiscountAmount.get();
     }
 
-
+    /**
+     *  Quanity * Price
+     */
     public static BigDecimal totalUniteProduct(Product product) {
         return product.getPrice().multiply(new BigDecimal(product.getQuantity()));
     }
 
+    /**
+     *  Weight * Price
+     */
     public static BigDecimal totalWeightProduct(Product product) {
         return product.getWeight().multiply(product.getPrice());
     }

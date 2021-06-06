@@ -40,7 +40,7 @@ public class CheckoutTest {
 	}
 	
 	@Test
-	public void testBasketWithTwoProduct() {
+	public void testBasketWithTwoProducts() {
 		Checkout checkout = new Checkout();
 		Basket basket = new Basket();
 		basket.addProduct(pizza,10);
@@ -50,7 +50,7 @@ public class CheckoutTest {
 	}
 	
 	@Test
-	public void testBasketWihtThreeProduct() {
+	public void testBasketWihtThreeProducts() {
 		Checkout checkout = new Checkout();
 		Basket basket = new Basket();
 		basket.addProduct(pizza,10);
