@@ -16,7 +16,4 @@ public class BuyXforYpricePromotion extends Promotion {
 		this.price = price;
 		this.numberOfProduct = numberOfProduct;
 	}
-	
-	
-
 }

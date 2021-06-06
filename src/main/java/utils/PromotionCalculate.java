@@ -13,17 +13,29 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class PromotionCalculate {
 
 
-    // Ex: buy 2 get 3
-    public static BigDecimal applyPromotionFreeProduct(Product gProduct, FreeProductPromotion freeProductPromotion) {
-        if (freeProductPromotion.getProduct().getCodeBarProdcut() == gProduct.getCodeBarProdcut()) {
-            int rapport = gProduct.getQuantity() / freeProductPromotion.getNumberMin();
-            return new BigDecimal(rapport).multiply(gProduct.getPrice());
+    /**
+     *
+     * @param product Product on which the promotion can be applied
+     * @param freeProductPromotion The promotional object to have if the product is eligible
+     * @return Amount to reduce
+     * Example : Buy 2 champions get 1 FREE
+     */
+    public static BigDecimal applyPromotionFreeProduct(Product product, FreeProductPromotion freeProductPromotion) {
+        if (freeProductPromotion.getProduct().getCodeBarProdcut() == product.getCodeBarProdcut()) {
+            int rapport = product.getQuantity() / freeProductPromotion.getNumberMin();
+            return new BigDecimal(rapport).multiply(product.getPrice());
         }
         return BigDecimal.ZERO;
     }
 
 
-    // X unité d'un produit ,avec Y euro.
+    /**
+     *
+     * @param product Product on which the promotion can be applied
+     * @param buyXforYpricePromotion
+     * @return Amount to reduce
+     * Example : Champion price = 15 euros => Buy 2 champions for 25 euros
+     */
     public static BigDecimal applyPromotionXProductForYPrice(Product product, BuyXforYpricePromotion buyXforYpricePromotion) {
         int N = product.getQuantity() / buyXforYpricePromotion.getNumberOfProduct();
         return new BigDecimal(N)
@@ -34,6 +46,13 @@ public final class PromotionCalculate {
 
     }
 
+
+    /**
+     *
+     * @param promotions The list of promotions that can be applied to the product
+     * @param product
+     * @return total Discount Amount
+     */
     public static BigDecimal applyMultiplePromotions(List<Promotion> promotions, Product product) {
         final AtomicReference<BigDecimal> totalDiscountAmount = new AtomicReference<>(new BigDecimal(0));
         Optional<List<Promotion>> optionalPromotions = Optional.ofNullable(promotions);
@@ -60,11 +79,11 @@ public final class PromotionCalculate {
     }
 
 
-    public static BigDecimal calculerTotalSansReductionUnit(Product product) {
+    public static BigDecimal totalUniteProduct(Product product) {
         return product.getPrice().multiply(new BigDecimal(product.getQuantity()));
     }
 
-    public static BigDecimal calculerMontantGroupProduit(Product product) {
+    public static BigDecimal totalWeightProduct(Product product) {
         return product.getWeight().multiply(product.getPrice());
     }
 }

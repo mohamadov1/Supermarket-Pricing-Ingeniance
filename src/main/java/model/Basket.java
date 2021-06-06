@@ -1,4 +1,5 @@
 package model;
+
 import lombok.Getter;
 
 import java.math.BigDecimal;
@@ -19,5 +20,6 @@ public class Basket {
 		product.setUnit(unit);
 		products.add(product);
 	}
+
 
 }

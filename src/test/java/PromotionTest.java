@@ -29,7 +29,7 @@ public class PromotionTest {
 		basket.addProduct(pizza,10);
 		basket.addProduct(yogurt,10);
 		basket.addProduct(coca,1);
-		BigDecimal total = checkout.calculateTheBasketTotal(basket, checkout.getPromotions());
+		BigDecimal total = checkout.calculateTheTotalBasket(basket, checkout.getPromotions());
 		org.junit.Assert.assertEquals(new BigDecimal("23.00"), total.setScale(2));
 
 	}
@@ -44,7 +44,7 @@ public class PromotionTest {
 		basket.addProduct(pizza,10);
 		basket.addProduct(yogurt,10);
 		basket.addProduct(coca,10);
-		BigDecimal total = checkout.calculateTheBasketTotal(basket, checkout.getPromotions());
+		BigDecimal total = checkout.calculateTheTotalBasket(basket, checkout.getPromotions());
 		org.junit.Assert.assertEquals(new BigDecimal("35.00"), total.setScale(2));
 	}
 	
@@ -56,7 +56,7 @@ public class PromotionTest {
 		basket.addProduct(pizza,10);
 		basket.addProduct(yogurt,10);
 		basket.addProduct(coca,1);
-		BigDecimal total = checkout.calculateTheBasketTotal(basket, checkout.getPromotions());
+		BigDecimal total = checkout.calculateTheTotalBasket(basket, checkout.getPromotions());
 		org.junit.Assert.assertEquals(new BigDecimal("26.00"), total.setScale(2));
 
 	}
@@ -72,7 +72,7 @@ public class PromotionTest {
 		basket.addProduct(pizza,10);
 		basket.addProduct(yogurt,10);
 		basket.addProduct(coca,10);
-		BigDecimal total = checkout.calculateTheBasketTotal(basket, checkout.getPromotions());
+		BigDecimal total = checkout.calculateTheTotalBasket(basket, checkout.getPromotions());
 		org.junit.Assert.assertEquals(new BigDecimal("42.50"), total.setScale(2));
 
 	}
@@ -86,7 +86,7 @@ public class PromotionTest {
 		basket.addProduct(pizza,10);
 		basket.addProduct(yogurt,10);
 		basket.addProduct(coca,1);
-		BigDecimal total = checkout.calculateTheBasketTotal(basket, checkout.getPromotions());
+		BigDecimal total = checkout.calculateTheTotalBasket(basket, checkout.getPromotions());
 		org.junit.Assert.assertEquals(new BigDecimal("21.50"), total.setScale(2));
 
 	}

@@ -1,8 +1,10 @@
 package utils;
 
-
 public enum Weight {
-	 	KILOGRAMME("Kg");
+	 	KILOGRAMME("Kg"),
+		GRAMME("gr"),
+		POUND("pnd");
+
 	 	private final String value;
 
 		Weight(String string) {
@@ -12,5 +14,5 @@ public enum Weight {
 		public String getValue() {
 		        return value;
 		 }
-	
+
 }
